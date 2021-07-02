@@ -1,6 +1,7 @@
 type URL {
     id: ID!
     url: String!
+    map_asset_url: String!
     cities: [City!]! @relation(name: "URL:cities and City:city")
     countries: [Country!]! @relation(name: "URL:countries and Country:country")
 }
