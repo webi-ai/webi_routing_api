@@ -18,11 +18,4 @@ type Country {
     map_location_url: URL! @relation(name: "URL:url and Country:map_location_url and City:map_location_url")
 }
 
-type URL {
-    id: ID!
-    url: String!
-    cities: [City!]! @relation(name: "URL:cities and City:city")
-    countries: [Country!]! @relation(name: "URL:countries and Country:country")
-}
-
 
