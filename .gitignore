@@ -3,7 +3,7 @@
 /workspace.xml
 .idea
 .dfx
-.vscode
+/.vscode/
 target
 node_modules
 # Datasource local storage ignored files
