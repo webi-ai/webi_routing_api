@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "sudograph/build/sudo-playground.js": "./sudograph/build/sudo-playground.js"
+  }
+}

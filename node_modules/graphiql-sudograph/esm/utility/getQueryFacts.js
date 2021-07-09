@@ -1,0 +1,45 @@
+import { parse, typeFromAST, visit, } from 'graphql';
+export default function getOperationFacts(schema, documentStr) {
+    if (!documentStr) {
+        return;
+    }
+    var documentAST;
+    try {
+        documentAST = parse(documentStr, {
+            experimentalFragmentVariables: true,
+        });
+    }
+    catch (_a) {
+        return;
+    }
+    var variableToType = schema
+        ? collectVariables(schema, documentAST)
+        : undefined;
+    var operations = [];
+    visit(documentAST, {
+        OperationDefinition: function (node) {
+            operations.push(node);
+        },
+    });
+    return { variableToType: variableToType, operations: operations, documentAST: documentAST };
+}
+export var getQueryFacts = getOperationFacts;
+export function collectVariables(schema, documentAST) {
+    var variableToType = Object.create(null);
+    documentAST.definitions.forEach(function (definition) {
+        if (definition.kind === 'OperationDefinition') {
+            var variableDefinitions = definition.variableDefinitions;
+            if (variableDefinitions) {
+                variableDefinitions.forEach(function (_a) {
+                    var variable = _a.variable, type = _a.type;
+                    var inputType = typeFromAST(schema, type);
+                    if (inputType) {
+                        variableToType[variable.name.value] = inputType;
+                    }
+                });
+            }
+        }
+    });
+    return variableToType;
+}
+//# sourceMappingURL=getQueryFacts.js.map

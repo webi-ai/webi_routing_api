@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/codywebb/PycharmProjects/webi_api/target/release/build/typenum-82df7e0027b73ddc/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/codywebb/PycharmProjects/webi_api/target/release/build/typenum-82df7e0027b73ddc/out/op.rs

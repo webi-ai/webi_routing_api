@@ -1,0 +1,11 @@
+/Users/codywebb/PycharmProjects/webi_api/target/wasm32-unknown-unknown/release/deps/httparse-6e0227e5b13df525.rmeta: /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/lib.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/iter.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/macros.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/mod.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/fallback.rs
+
+/Users/codywebb/PycharmProjects/webi_api/target/wasm32-unknown-unknown/release/deps/libhttparse-6e0227e5b13df525.rlib: /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/lib.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/iter.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/macros.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/mod.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/fallback.rs
+
+/Users/codywebb/PycharmProjects/webi_api/target/wasm32-unknown-unknown/release/deps/httparse-6e0227e5b13df525.d: /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/lib.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/iter.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/macros.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/mod.rs /Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/fallback.rs
+
+/Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/lib.rs:
+/Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/iter.rs:
+/Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/macros.rs:
+/Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/mod.rs:
+/Users/codywebb/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.4.1/src/simd/fallback.rs:

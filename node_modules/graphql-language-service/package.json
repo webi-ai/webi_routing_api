@@ -1,0 +1,39 @@
+{
+  "name": "graphql-language-service",
+  "version": "3.1.4",
+  "description": "The official, runtime independent Language Service for GraphQL",
+  "contributors": [
+    "GraphQL Contributors"
+  ],
+  "repository": "http://github.com/graphql/graphiql",
+  "homepage": "https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service#readme",
+  "bugs": {
+    "url": "https://github.com/graphql/graphiql/issues?q=issue+label:languageservice"
+  },
+  "license": "MIT",
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "keywords": [
+    "graphql",
+    "language service",
+    "LSP"
+  ],
+  "main": "dist/index.js",
+  "module": "esm/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "graphql": "./dist/temp-bin.js"
+  },
+  "peerDependencies": {
+    "graphql": ">= v14.5.0 <= 15.5.0"
+  },
+  "dependencies": {
+    "graphql-language-service-interface": "^2.8.2",
+    "graphql-language-service-types": "^1.8.0"
+  },
+  "devDependencies": {
+    "graphql": "experimental-stream-defer"
+  }
+}
