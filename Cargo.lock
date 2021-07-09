@@ -563,6 +563,7 @@ dependencies = [
 name = "graphql"
 version = "0.0.0"
 dependencies = [
+ "ic-cdk 0.3.0",
  "sudograph",
 ]
 

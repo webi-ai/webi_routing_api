@@ -9,3 +9,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 sudograph = "0.3.0"
+ic-cdk= "0.3.0"

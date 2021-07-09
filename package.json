@@ -6,5 +6,4 @@
         "dfx-build-graphql": "cargo build --target wasm32-unknown-unknown --package graphql --release",
         "dfx-optimize-graphql": "./target/bin/ic-cdk-optimizer ./target/wasm32-unknown-unknown/release/graphql.wasm -o ./target/wasm32-unknown-unknown/release/graphql-optimized.wasm"
     }
-
 }
