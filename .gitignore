@@ -1,11 +1,11 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-.idea
-.dfx
+/.idea/
+/.dfx/
 /.vscode/
-target
-node_modules
+/target/
+/node_modules/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
