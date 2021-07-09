@@ -6,4 +6,4 @@ api for webI that uses sudograph
 
 ***need to install wasm ic optimizer*** 
 
-**cargo install ic-cdk-optimizer --root target**
+```cargo install ic-cdk-optimizer --root target
