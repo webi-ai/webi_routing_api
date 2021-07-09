@@ -60995,7 +60995,9 @@ function sudograph(options) {
   const canisterId = options.canisterId;
   return {
     query: async (queryString, variables = {}) => {
-      const agent = new HttpAgent();
+      const agent = new HttpAgent({
+        identity: options.identity
+      });
       await agent.fetchRootKey();
       const graphqlActor = Actor.createActor(idlFactory, {
         agent,
@@ -61006,7 +61008,9 @@ function sudograph(options) {
       return resultJSON;
     },
     mutation: async (mutationString, variables = {}) => {
-      const agent = new HttpAgent();
+      const agent = new HttpAgent({
+        identity: options.identity
+      });
       await agent.fetchRootKey();
       const graphqlActor = Actor.createActor(idlFactory, {
         agent,
@@ -61020,8 +61024,23 @@ function sudograph(options) {
 }
 
 class SudoPlayground extends HTMLElement {
-  get canisterId() {
-    return this.getAttribute("canisterId");
+  get canisterIdLocal() {
+    return this.getAttribute("canister-id-local");
+  }
+  get canisterIdIc() {
+    return this.getAttribute("canister-id-ic");
+  }
+  get originLocal() {
+    return this.getAttribute("origin-local");
+  }
+  get originIc() {
+    return this.getAttribute("origin-ic");
+  }
+  get queryFunctionName() {
+    return this.getAttribute("query-function-name");
+  }
+  get mutationFunctionName() {
+    return this.getAttribute("mutation-function-name");
   }
   constructor() {
     super();
@@ -61034,20 +61053,23 @@ class SudoPlayground extends HTMLElement {
     div.style.height = "100vh";
     document.body.appendChild(div);
     setTimeout(() => {
+      const environment = getEnvironment(this.originLocal, this.originIc);
       reactDom.render(react.createElement(__pika_web_default_export_for_treeshaking__, {
-        fetcher: graphQLFetcher(this.canisterId)
+        fetcher: graphQLFetcher(environment === "ic" ? this.canisterIdIc : this.canisterIdLocal, this.queryFunctionName, this.mutationFunctionName)
       }), div);
     }, 1e3);
   }
 }
 window.customElements.define("sudo-playground", SudoPlayground);
-function graphQLFetcher(canisterId) {
+function graphQLFetcher(canisterId, queryFunctionName, mutationFunctionName) {
   return async (graphQLParams) => {
     const {
       query,
       mutation
     } = sudograph({
-      canisterId
+      canisterId,
+      queryFunctionName,
+      mutationFunctionName
     });
     const queryOrMutation = getQueryOrMutation(graphQLParams.query);
     const result = queryOrMutation === "QUERY" ? await query(graphQLParams.query, graphQLParams.variables) : await mutation(graphQLParams.query, graphQLParams.variables);
@@ -61061,4 +61083,12 @@ function getQueryOrMutation(queryString) {
     return "QUERY";
   }
   return firstDefinition.operation === "query" ? "QUERY" : "MUTATION";
+}
+function getEnvironment(originLocal, originIc) {
+  if (window.location.origin === originLocal || window.location.origin.endsWith("localhost:8000")) {
+    return "local";
+  }
+  if (window.location.origin === originIc || window.location.origin.endsWith("ic0.app")) {
+    return "ic";
+  }
 }

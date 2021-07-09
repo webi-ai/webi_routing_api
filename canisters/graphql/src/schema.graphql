@@ -2,20 +2,18 @@ type URL {
     id: ID!
     url: String!
     map_asset_url: String!
-    cities: [City!]! @relation(name: "URL:cities and City:city")
-    countries: [Country!]! @relation(name: "URL:countries and Country:country")
+    cities: [City!]! @relation(name: "URL:cities and City:map_location_url")
+    countries: [Country!]! @relation(name: "URL:countries and Country:map_location_url")
 }
 
 type City {
     id: ID!
     city:  String!
-    map_location_url: URL! @relation(name: "URL:url and City:map_location_url and Country:map_location_url")
+    map_location_url: URL! @relation(name: "URL:cities and City:map_location_url")
 }
 
 type Country {
     id: ID!
     country:  String!
-    map_location_url: URL! @relation(name: "URL:url and Country:map_location_url and City:map_location_url")
+    map_location_url: URL! @relation(name: "URL:countries and Country:map_location_url")
 }
-
-
