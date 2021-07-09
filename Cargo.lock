@@ -627,13 +627,25 @@ dependencies = [
 ]
 
 [[package]]
-name = "ic-cdk-macros"
-version = "0.2.4"
+name = "ic-cdk"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d18985bb2a060d6d3ff052812b1067ed7e989088369a98c24ffd3de08b14030b"
+checksum = "6f385e97263deb4469938ba1bbbb0a0259294132ca2523e20a971225571d5485"
 dependencies = [
  "candid",
- "ic-cdk",
+ "cfg-if 0.1.10",
+ "ic-types",
+ "serde",
+]
+
+[[package]]
+name = "ic-cdk-macros"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5233d71766be2c74f3433a51b8d4a584f8b416a87a961ce0e579110bc30aa683"
+dependencies = [
+ "candid",
+ "ic-cdk 0.3.0",
  "proc-macro2",
  "quote",
  "serde",
@@ -1245,26 +1257,28 @@ checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
 
 [[package]]
 name = "sudodb"
-version = "0.2.2"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b95fea0848582e38635fbbcaa04e1d8d445ae511d1e94d99a0a42f3b93374284"
+checksum = "a1421e70f9101fefb950ec882e07d0588487d42cf1c54af0bd733980053045ee"
 dependencies = [
  "base32",
  "chrono",
- "ic-cdk",
+ "ic-cdk 0.2.4",
  "rand",
+ "serde",
  "sha2",
 ]
 
 [[package]]
 name = "sudograph"
-version = "0.2.2"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1d8d5003db96f06c34f16f748f15ea463dee16e3fa545e5bc4da0a2bf28bf27"
+checksum = "ec88784a95f1b8061bf5b7e4b34dadcefd5e18dbe7f194b729790c4deb327bb1"
 dependencies = [
  "async-graphql",
  "getrandom",
- "ic-cdk",
+ "graphql-parser",
+ "ic-cdk 0.3.0",
  "ic-cdk-macros",
  "rand",
  "serde",
@@ -1275,9 +1289,9 @@ dependencies = [
 
 [[package]]
 name = "sudograph-generate"
-version = "0.2.2"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ba9e9f6c1ea61074e1064ddafe14475bfaae30877fd901288b8c881da5a128c7"
+checksum = "1bab490b516032e4fba0a87c28b0b70066489ca2b0bcb176c85c794e92e8a56c"
 dependencies = [
  "graphql-parser",
  "proc-macro2",
