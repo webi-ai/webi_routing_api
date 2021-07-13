@@ -10,7 +10,7 @@ type URL {
     cities: [City!]! @relation(name: "URL:cities and City:map_location_url")
     states: [State!]! @relation(name: "URL:states and State:map_location_url")
     countries: [Country!]! @relation(name: "URL:countries and Country:map_location_url")
-    continent:[Continent!]! @relation(name: "URL:continent and Continent:map_location_url")
+    continent: [Continent!]! @relation(name: "URL:continent and Continent:map_location_url")
 }
 
 type City {
