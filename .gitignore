@@ -6,3 +6,4 @@ dist
 build
 
 apy.py
+.DS_Store
