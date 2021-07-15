@@ -35,7 +35,7 @@ async function getCityIds() {
 //query state IDs
 async function getStateIds() {
     const result = await query(gql`
-        query {readState { id name }}
+        query {readState { id }}
     `);
 
     const states = result.data.readState;
@@ -47,7 +47,7 @@ async function getStateIds() {
 //query country IDs
 async function getCountryIds() {
     const result = await query(gql`
-        query {readCountry { id country }}
+        query {readCountry { id  }}
     `);
 
     const countries = result.data.readCountry;
@@ -58,7 +58,7 @@ async function getCountryIds() {
 //query continent IDs
 async function getContinentIds() {
     const result = await query(gql`
-        query {readContinent { id name }}
+        query {readContinent { id  }}
     `);
 
     const continents = result.data.readContinent;
@@ -70,12 +70,75 @@ async function getContinentIds() {
 //query url IDs
 async function getURLIds() {
     const result = await query(gql`
-        query {readURL { id url map_asset_url}}
+        query {readURL { id }}
     `);
 
     const urls = result.data.readURL;
 
     return urls;
+
+
+
+//search for city return app url
+async function CitySearch(city) {
+    const result = await query(gql`
+        query($city:String!) {
+  readCity(
+    search: {city: {contains: $city}}
+    limit: 10
+    offset: 0
+    order: {city: ASC}
+  ) {id city map_location_url {url}}
+    }
+    `, {
+        city
+    });
+
+    const urls = result.data.readCity;
+
+    return urls;
+
+//search for state return app url
+async function StateSearch(state) {
+    const result = await query(gql`
+        query($state:String!) {
+  readState(
+    search: {name: {contains: $state}}
+    limit: 10
+    offset: 0
+    order: {city: ASC}
+  ) {id name map_location_url {url}}
+    }
+    `, {
+        state
+    });
+
+    const urls = result.data.readState;
+
+    return urls;
+
+
+
+//search for country return app url
+async function CountrySearch(country) {
+    const result = await query(gql`
+        query($country:String!) {
+  readCountry(
+    search: {country: {contains: $country}}
+    limit: 10
+    offset: 0
+    order: {city: ASC}
+  ) {id country map_location_url {url}}
+    }
+    `, {
+        country
+    });
+
+    const urls = result.data.readCountry;
+
+    return urls;
+
+
 
 
 
