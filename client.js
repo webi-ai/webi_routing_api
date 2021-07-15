@@ -23,7 +23,7 @@ export type Options = Readonly<{
 // query for city ids
 async function getCityIds() {
     const result = await query(gql`
-        query {readCity { id city }}
+        query {readCity { id  }}
     `);
 
     const cities = result.data.readCity;
