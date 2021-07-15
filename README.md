@@ -6,4 +6,4 @@ routing api for webI that uses sudograph
 
 need to install wasm ic optimizer
 
-<b>cargo install ic-cdk-optimizer --root target</b>
+'''bash cargo install ic-cdk-optimizer --root target'''
